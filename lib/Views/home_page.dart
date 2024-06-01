@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:provider/provider.dart';
+import 'package:resquecare/Models/profile_model.dart';
+import 'package:resquecare/View-Model/admin_pengaduan_provider.dart';
+import 'package:resquecare/View-Model/auth_services.dart';
+import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
 import 'package:resquecare/Views/Features/Edukasi/edukasi_page.dart';
 import 'package:resquecare/Views/Features/Panduan_Aplikasi/panduan_page.dart';
 import 'package:resquecare/Views/Features/Panggilan_Darurat/panggilan_darurat_page.dart';
@@ -30,6 +35,7 @@ class HomePage extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
+                context.read<AdminPengaduanProvider>().getDataPengaduanUser();
                 Navigator.push(context, createRoute(const NotificationPage()));
               },
               icon: const Icon(Icons.notifications_rounded),
@@ -42,19 +48,29 @@ class HomePage extends StatelessWidget {
               color: Colors.white,
               iconSize: 35,
             ),
-            IconButton(
-              onPressed: () {
-                 Navigator.push(context, createRoute(const ProfilePage()));
-              },
-              icon: const Icon(Icons.person),
-              color: Colors.white,
-              iconSize: 35,
-            ),
+            Consumer<AuthServicesProvider>(builder: (context, value, child) {
+              return IconButton(
+                onPressed: () {
+                  late Accounts data;
+                  final dataList = value.dataUser;
+
+                  for (var element in dataList) {
+                    data = element;
+                  }
+                  print(data);
+                  Navigator.push(context, createRoute(ProfilePage(data: data)));
+                },
+                icon: const Icon(Icons.person),
+                color: Colors.white,
+                iconSize: 35,
+              );
+            }),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: Stack( //digunakan untuk menumpuk widget
+      body: Stack(
+        //digunakan untuk menumpuk widget
         alignment: Alignment.center,
         children: [
           Padding(
@@ -65,8 +81,10 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    InkWell( //widget 
+                    InkWell(
+                      //widget
                       onTap: () {
+                        context.read<PanggilanDaruratProvider>().getDataNomorPanggilanDarurat();
                         Navigator.push(context, createRoute(const PanggilanDaruratPage()));
                       },
                       child: Column(
@@ -235,7 +253,8 @@ class HomePage extends StatelessWidget {
           Positioned(
             top: 100,
             left: -5,
-            child: ChatBubble( //bentuk seperti buble chat
+            child: ChatBubble(
+              //bentuk seperti buble chat
               clipper: ChatBubbleClipper6(
                 type: BubbleType.receiverBubble,
               ),

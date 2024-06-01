@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
+import 'package:resquecare/Views/Admin/Nomor_Panggilan_Darurat/edit_nomor_page.dart';
+import 'package:resquecare/Views/Admin/Nomor_Panggilan_Darurat/tambah_nomor_page.dart';
+import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
 
-class PanggilanDaruratPage extends StatelessWidget {
-  const PanggilanDaruratPage({super.key});
+class NomorPanggilanDaruratPage extends StatelessWidget {
+  const NomorPanggilanDaruratPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        onPressed: () {
+          Navigator.push(context, createRoute(const TambahNomorPage()));
+        },
+        backgroundColor: AppColors.purpleAppbar,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 40,
+        ),
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: const BackButton(
@@ -35,6 +50,9 @@ class PanggilanDaruratPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: ListTile(
+                    onTap: () {
+                      Navigator.push(context, createRoute(EditNomorPage(dataPanggilan: value.getDataNomor[index],)));
+                    },
                     leading: const SizedBox(
                       width: 50,
                       child: CircleAvatar(
@@ -52,10 +70,7 @@ class PanggilanDaruratPage extends StatelessWidget {
                       value.getDataNomor[index].phoneNumber,
                       style: const TextStyle(color: Colors.black87),
                     ),
-                    trailing: Image.asset(
-                      "assets/icons/WA.png",
-                      width: 26,
-                    ),
+                    trailing: const Icon(Icons.mode),
                   ),
                 ),
               );

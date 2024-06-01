@@ -1,5 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
+import 'package:resquecare/Models/profile_model.dart';
+import 'package:resquecare/View-Model/auth_services.dart';
 import 'package:resquecare/Views/Admin/admin_home_page.dart';
 import 'package:resquecare/Views/Auth/register_page.dart';
 import 'package:resquecare/Views/home_page.dart';
@@ -17,13 +23,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  final String oldUsername = "Defi";
-  final String oldPassword = "Defi";
-  final String adminUsername = "admin";
-  final String adminPassword = "admin";
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,8 @@ class _LoginPageState extends State<LoginPage> {
             fit: BoxFit.cover,
           ),
         ),
-        child: SingleChildScrollView( //agar tidak overflow 
+        child: SingleChildScrollView(
+          //agar tidak overflow
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -70,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ]),
                   child: Card(
-                    child: Form( //untuk validator
+                    child: Form(
+                      //untuk validator
                       key: _formKey,
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(20, 30, 20, 40),
@@ -78,18 +81,18 @@ class _LoginPageState extends State<LoginPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              "Username :",
+                              "Email :",
                               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
                             ),
                             const Gap(5),
                             CustomTextField(
-                              hintText: 'Username...',
-                              controller: usernameController,
+                              hintText: 'Email...',
+                              controller: emailController,
                               validator: (p0) {
                                 if (p0!.isEmpty) {
-                                  return "Please enter username";
+                                  return "Please enter email address";
                                 }
-                                
+
                                 return null;
                               },
                             ),
@@ -107,12 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                                 if (p0!.isEmpty) {
                                   return "Please enter password";
                                 }
-                                // if (p0 != adminPassword) {
-                                //   return "Wrong password. Try again";
-                                // }
-                                // if (p0 != adminPassword) {
-                                //   return "Wrong password. Try again";
-                                // }
                                 return null;
                               },
                             ),
@@ -122,23 +119,17 @@ class _LoginPageState extends State<LoginPage> {
                               alignment: Alignment.center,
                               child: ButtonPurple(
                                 buttonText: "Masuk",
-                                onPressed: () {
-                                  print(usernameController.text);
-                                  print(passwordController.text);
-                                  if (_formKey.currentState!.validate()) { //cek validator
-                                    showDialog( //popup
+                                onPressed: () async {
+                                  if (_formKey.currentState!.validate()) {
+                                    print("Here");
+                                    context.read<AuthServicesProvider>().signIn(emailController.text, passwordController.text, context);
+                                    showDialog(
+                                      //popup
                                       context: context,
                                       builder: (context) {
-                                        Future.delayed(const Duration(seconds: 3), () {
-                                          if (usernameController.text == adminUsername) {
-                                            Navigator.pushReplacement(context, createRoute(const AdminHomePage()));
-                                          }
-                                          if (usernameController.text == oldUsername) {
-                                            Navigator.pushReplacement(context, createRoute(const HomePage()));
-                                          }
-                                          return null;
-                                        });
-                                        return AlertDialog( //pop up bernama alert dialog
+                                        Future.delayed(const Duration(seconds: 3), () {});
+                                        return AlertDialog(
+                                          //pop up bernama alert dialog
                                           content: SizedBox(
                                             height: 192,
                                             width: 252,
@@ -157,8 +148,8 @@ class _LoginPageState extends State<LoginPage> {
                                         );
                                       },
                                     );
-                                    usernameController.clear();
-                                    passwordController.clear();
+                                    // emailController.clear();
+                                    // passwordController.clear();
                                   }
                                 },
                               ),

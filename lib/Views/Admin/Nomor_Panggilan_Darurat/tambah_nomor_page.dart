@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
+import 'package:resquecare/Models/panggilan_darurat_model.dart';
+import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
+import 'package:resquecare/Views/Admin/admin_home_page.dart';
 import 'package:resquecare/Widgets/button_purple.dart';
-import 'package:resquecare/Widgets/button_white.dart';
 import 'package:resquecare/Widgets/custom_text_form_field.dart';
+import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
 
 class TambahNomorPage extends StatelessWidget {
@@ -10,11 +14,19 @@ class TambahNomorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final nameController = TextEditingController();
+    final phoneController = TextEditingController();
     return Scaffold(
       floatingActionButton: ButtonPurple(
         fixedSize: const Size(292, 46),
         buttonText: "Simpan",
         onPressed: () {
+          final data = PanggilanDaruratModel(
+            fullname: nameController.text,
+            phoneNumber: phoneController.text,
+          );
+          context.read<PanggilanDaruratProvider>().createCallNumber(data);
+          Navigator.push(context, createRoute(const AdminHomePage()));
           showDialog(
             context: context,
             builder: (context) {
@@ -60,7 +72,10 @@ class TambahNomorPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
             ),
             const Gap(5),
-            CustomTextField(hintText: 'Panggila Darurat 1'),
+            CustomTextField(
+              hintText: 'Panggilan Darurat 1',
+              controller: nameController,
+            ),
             const Gap(20),
             const Text(
               "Nomor :",
@@ -68,8 +83,8 @@ class TambahNomorPage extends StatelessWidget {
             ),
             const Gap(5),
             CustomTextField(
+              controller: phoneController,
               hintText: '085 423 798 061',
-              obsecureText: true,
             ),
           ],
         ),

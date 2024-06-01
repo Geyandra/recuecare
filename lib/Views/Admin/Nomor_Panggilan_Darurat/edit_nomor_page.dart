@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
+import 'package:resquecare/Models/panggilan_darurat_model.dart';
+import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
+import 'package:resquecare/Views/Admin/Nomor_Panggilan_Darurat/nomor_panggilan_darurat_page.dart';
+import 'package:resquecare/Views/Admin/admin_home_page.dart';
 import 'package:resquecare/Widgets/button_purple.dart';
 import 'package:resquecare/Widgets/button_white.dart';
 import 'package:resquecare/Widgets/custom_text_form_field.dart';
+import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
 
 class EditNomorPage extends StatelessWidget {
-  const EditNomorPage({super.key});
+  final PanggilanDaruratModel dataPanggilan;
+  const EditNomorPage({super.key, required this.dataPanggilan});
 
   @override
   Widget build(BuildContext context) {
+    final nameController = TextEditingController();
+    final phoneController = TextEditingController();
+
+    nameController.text = dataPanggilan.fullname;
+    phoneController.text = dataPanggilan.phoneNumber;
     return Scaffold(
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -17,6 +29,9 @@ class EditNomorPage extends StatelessWidget {
           ButtonWhite(
             buttonText: "Hapus",
             onPressed: () {
+              context.read<PanggilanDaruratProvider>().deleteCallNumber(dataPanggilan.id);
+              Navigator.push(context, createRoute(const AdminHomePage()));
+
               showDialog(
                 context: context,
                 builder: (context) {
@@ -47,6 +62,13 @@ class EditNomorPage extends StatelessWidget {
           ButtonPurple(
             buttonText: "Simpan",
             onPressed: () {
+              final data = PanggilanDaruratModel(
+                id: dataPanggilan.id,
+                fullname: nameController.text,
+                phoneNumber: phoneController.text,
+              );
+              context.read<PanggilanDaruratProvider>().editCallNumber(data);
+              Navigator.push(context, createRoute(const AdminHomePage()));
               showDialog(
                 context: context,
                 builder: (context) {
@@ -94,7 +116,10 @@ class EditNomorPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
             ),
             const Gap(5),
-            CustomTextField(hintText: 'Panggila Darurat 1'),
+            CustomTextField(
+              hintText: dataPanggilan.fullname,
+              controller: nameController,
+            ),
             const Gap(20),
             const Text(
               "Nomor :",
@@ -102,8 +127,8 @@ class EditNomorPage extends StatelessWidget {
             ),
             const Gap(5),
             CustomTextField(
-              hintText: '085 423 798 061',
-              obsecureText: true,
+              controller: phoneController,
+              hintText: dataPanggilan.phoneNumber,
             ),
           ],
         ),

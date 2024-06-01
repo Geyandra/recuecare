@@ -73,7 +73,9 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Panggilan Darurat"),
+                                title: const Text("Fitur Panggilan Darurat",
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 trailing: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -195,7 +197,9 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Panggilan Darurat"),
+                          title: const Text("Fitur Panggilan Darurat",
+                            style: TextStyle(fontSize: 15),
+                          ),
                           trailing: IconButton(
                             onPressed: () {
                               setState(() {
@@ -252,7 +256,9 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Pengaduan"),
+                                title: const Text("Fitur Pengaduan",
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 trailing: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -368,7 +374,9 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Pengaduan"),
+                          title: const Text("Fitur Pengaduan",
+                            style: TextStyle(fontSize: 15),
+                          ),
                           trailing: IconButton(
                             onPressed: () {
                               setState(() {
@@ -425,7 +433,9 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Edukasi Penanganan ODGJ"),
+                                title: const Text("Fitur Edukasi Penanganan ODGJ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 trailing: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -499,7 +509,9 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Edukasi Penanganan ODGJ"),
+                          title: const Text("Fitur Edukasi Penanganan ODGJ",
+                            style: TextStyle(fontSize: 15),
+                          ),
                           trailing: IconButton(
                             onPressed: () {
                               setState(() {
@@ -556,7 +568,9 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Panduan Aplikasi"),
+                                title: const Text("Fitur Panduan Aplikasi",
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 trailing: IconButton(
                                   onPressed: () {
                                     setState(() {
@@ -647,7 +661,9 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Panduan Aplikasi"),
+                          title: const Text("Fitur Panduan Aplikasi",
+                            style: TextStyle(fontSize: 15),
+                          ),
                           trailing: IconButton(
                             onPressed: () {
                               setState(() {

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:resquecare/Views/Admin/Nomor%20Panggilan%20Darurat/nomor_panggilan_darurat_page.dart';
-import 'package:resquecare/Views/Admin/Nomor%20Panggilan%20Darurat/tambah_nomor_page.dart';
+import 'package:provider/provider.dart';
+import 'package:resquecare/Models/profile_model.dart';
+import 'package:resquecare/View-Model/admin_pengaduan_provider.dart';
+import 'package:resquecare/View-Model/auth_services.dart';
+import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
+import 'package:resquecare/Views/Admin/Nomor_Panggilan_Darurat/nomor_panggilan_darurat_page.dart';
+import 'package:resquecare/Views/Admin/Nomor_Panggilan_Darurat/tambah_nomor_page.dart';
 import 'package:resquecare/Views/Admin/Pengaduan/laporan_pengaduan_page.dart';
 import 'package:resquecare/Views/Admin/admin_profile_page.dart';
+import 'package:resquecare/Views/profile_page.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
 
@@ -32,14 +38,24 @@ class AdminHomePage extends StatelessWidget {
               color: Colors.white,
               iconSize: 35,
             ),
-            IconButton(
-              onPressed: () {
-                Navigator.push(context, createRoute(const AdminProfilePage()));
-              },
-              icon: const Icon(Icons.person),
-              color: Colors.white,
-              iconSize: 35,
-            ),
+            Consumer<AuthServicesProvider>(builder: (context, value, child) {
+              return IconButton(
+                onPressed: () {
+                  late Accounts data;
+                  final streamData = value.dataUser;
+                  for (var e in streamData) {
+                    data = e;
+                  }
+                  print("=" * 20);
+                  print(data);
+
+                  Navigator.push(context, createRoute(ProfilePage(data: data)));
+                },
+                icon: const Icon(Icons.person),
+                color: Colors.white,
+                iconSize: 35,
+              );
+            }),
           ],
         ),
       ),
@@ -57,6 +73,7 @@ class AdminHomePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
+                        context.read<PanggilanDaruratProvider>().getDataNomorPanggilanDarurat();
                         Navigator.push(context, createRoute(const NomorPanggilanDaruratPage()));
                       },
                       child: Column(
@@ -92,6 +109,7 @@ class AdminHomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
+                        context.read<AdminPengaduanProvider>().getDataPengaduanUser();
                         Navigator.push(context, createRoute(const LapporanPengaduanPage()));
                       },
                       child: Column(

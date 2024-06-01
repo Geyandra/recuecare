@@ -1,19 +1,17 @@
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:resquecare/Models/pengaduan_model.dart";
 import "package:resquecare/Widgets/custom_text_form_field.dart";
 import "package:resquecare/colors.dart";
 
-class StatusPengaduanPage extends StatefulWidget {
-  const StatusPengaduanPage({super.key});
+class StatusPengaduanPage extends StatelessWidget {
+  final PengaduanModel dataPengaduan;
+  const StatusPengaduanPage({super.key, required this.dataPengaduan});
 
-  @override
-  State<StatusPengaduanPage> createState() => _StatusPengaduanPageState();
-}
-
-class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
-  final String statusPengaduan = 'Accepted'; //status pengaduan
+ //status pengaduan
   @override
   Widget build(BuildContext context) {
+  final String statusPengaduan = dataPengaduan.status; 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -46,7 +44,7 @@ class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
                   const Gap(5),
                   CustomTextField(
                     readOnly: true,
-                    hintText: "Deskripsi",
+                    hintText: dataPengaduan.deskripsiKejadian,
                     maxLine: 3,
                   ),
                   const Gap(20),
@@ -58,7 +56,7 @@ class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
                   CustomTextField(
                     prefixIcon: const Icon(Icons.date_range_rounded),
                     readOnly: true,
-                    hintText: "Klik Untuk Menambahkan Tanggal",
+                    hintText: dataPengaduan.tanggalKejadian,
                   ),
                   const Gap(20),
                   const Text(
@@ -70,7 +68,7 @@ class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
                     prefixIcon: const Icon(
                       Icons.location_on,
                     ),
-                    hintText: "Klik Untuk Menambahkan Lokasi",
+                    hintText: dataPengaduan.lokasiKejadian,
                   ),
                   const Gap(20),
                   const Text(
@@ -79,7 +77,7 @@ class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
                   ),
                   const Gap(5),
                   CustomTextField(
-                    hintText: "Tambahkan  Keterangan Lokasi",
+                    hintText: dataPengaduan.keteranganLokasi,
                   ),
                   const Gap(20),
                   const Text(
@@ -88,12 +86,17 @@ class _StatusPengaduanPageState extends State<StatusPengaduanPage> {
                   ),
                   const Gap(5),
                   Container(
-                    alignment: Alignment.center,
-                    height: 80,
-                    width: 80,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), border: Border.all(color: AppColors.purpleButton),),
-                    child: Image.asset("assets/images/odgj.png", fit: BoxFit.contain,)
-                  ),
+                      alignment: Alignment.center,
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(color: AppColors.purpleButton),
+                      ),
+                      child: Image.asset(
+                        "assets/images/odgj.png",
+                        fit: BoxFit.contain,
+                      )),
                 ],
               ),
             ),

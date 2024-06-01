@@ -1,19 +1,17 @@
 import "package:flutter/material.dart";
 import "package:gap/gap.dart";
+import "package:provider/provider.dart";
+import "package:resquecare/Models/pengaduan_model.dart";
+import "package:resquecare/View-Model/admin_pengaduan_provider.dart";
 import "package:resquecare/Widgets/button_purple.dart";
 import "package:resquecare/Widgets/button_white.dart";
 import "package:resquecare/Widgets/custom_text_form_field.dart";
 import "package:resquecare/colors.dart";
 
-class PengaduanPage extends StatefulWidget {
-  const PengaduanPage({super.key});
+class AdminPengaduanPage extends StatelessWidget {
+  final PengaduanModel dataPengaduan;
+  const AdminPengaduanPage({super.key, required this.dataPengaduan});
 
-  @override
-  State<PengaduanPage> createState() => _PengaduanPageState();
-}
-
-class _PengaduanPageState extends State<PengaduanPage> {
-  // final String statusPengaduan = 'Accepted';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +21,15 @@ class _PengaduanPageState extends State<PengaduanPage> {
           ButtonWhite(
             buttonText: "Tolak",
             onPressed: () {
+              final data = PengaduanModel(
+                deskripsiKejadian: dataPengaduan.deskripsiKejadian,
+                keteranganLokasi: dataPengaduan.keteranganLokasi,
+                lokasiKejadian: dataPengaduan.lokasiKejadian,
+                buktiFoto: dataPengaduan.buktiFoto,
+                tanggalKejadian: dataPengaduan.tanggalKejadian,
+                status: "rejected",
+              );
+              context.read<AdminPengaduanProvider>().konfirmasiPengaduan(data);
               showDialog(
                 context: context,
                 builder: (context) {
@@ -53,6 +60,15 @@ class _PengaduanPageState extends State<PengaduanPage> {
           ButtonPurple(
             buttonText: "Konfirmasi",
             onPressed: () {
+              final data = PengaduanModel(
+                deskripsiKejadian: dataPengaduan.deskripsiKejadian,
+                keteranganLokasi: dataPengaduan.keteranganLokasi,
+                lokasiKejadian: dataPengaduan.lokasiKejadian,
+                buktiFoto: dataPengaduan.buktiFoto,
+                tanggalKejadian: dataPengaduan.tanggalKejadian,
+                status: "accepted",
+              );
+              context.read<AdminPengaduanProvider>().konfirmasiPengaduan(data);
               showDialog(
                 context: context,
                 builder: (context) {
@@ -116,7 +132,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                   const Gap(5),
                   CustomTextField(
                     readOnly: true,
-                    hintText: "ODGJ mengancam di sekitar jalan kalimantan jember dengan membawa tongkat",
+                    hintText: dataPengaduan.deskripsiKejadian,
                     maxLine: 3,
                   ),
                   const Gap(20),
@@ -128,7 +144,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                   CustomTextField(
                     prefixIcon: const Icon(Icons.date_range_rounded),
                     readOnly: true,
-                    hintText: "Sabtu, 27 April 2024",
+                    hintText: dataPengaduan.tanggalKejadian,
                   ),
                   const Gap(20),
                   const Text(
@@ -141,7 +157,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                     prefixIcon: const Icon(
                       Icons.location_on,
                     ),
-                    hintText: "Jl. Kalimantan",
+                    hintText: dataPengaduan.lokasiKejadian,
                   ),
                   const Gap(20),
                   const Text(
@@ -151,7 +167,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                   const Gap(5),
                   CustomTextField(
                     readOnly: true,
-                    hintText: "Depan double w",
+                    hintText: dataPengaduan.keteranganLokasi,
                   ),
                   const Gap(100)
                 ],
