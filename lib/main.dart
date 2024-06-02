@@ -8,9 +8,6 @@ import 'package:resquecare/View-Model/others_provider.dart';
 import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
 import 'package:resquecare/View-Model/pengaduan_provider.dart';
 import 'package:resquecare/Views/Auth/login_page.dart';
-import 'package:resquecare/Views/Auth/splash_screen.dart';
-import 'package:resquecare/Views/Features/Pengaduan/pengaduan.dart';
-import 'package:resquecare/Views/profile_page.dart';
 import 'package:resquecare/colors.dart';
 
 main() async {

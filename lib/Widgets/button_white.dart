@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resquecare/colors.dart';
 
+// ignore: must_be_immutable
 class ButtonWhite extends StatelessWidget {
   Size? fixedSize;
   final String buttonText;

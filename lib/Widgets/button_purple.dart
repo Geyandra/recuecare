@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resquecare/colors.dart';
 
+// ignore: must_be_immutable
 class ButtonPurple extends StatelessWidget {
   final String buttonText;
   final void Function()? onPressed;

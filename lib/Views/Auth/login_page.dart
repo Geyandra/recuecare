@@ -1,14 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
-import 'package:resquecare/Models/profile_model.dart';
 import 'package:resquecare/View-Model/auth_services.dart';
-import 'package:resquecare/Views/Admin/admin_home_page.dart';
 import 'package:resquecare/Views/Auth/register_page.dart';
-import 'package:resquecare/Views/home_page.dart';
 import 'package:resquecare/Widgets/button_purple.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';

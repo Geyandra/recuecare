@@ -1,7 +1,5 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter_geocoder/geocoder.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:geocoding/geocoding.dart';
@@ -155,7 +153,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                   const Gap(5),
                   CustomTextField(
                     validator: (value) {
-                      if (value!.isEmpty || value == null) {
+                      if (value!.isEmpty) {
                         return "Please select date";
                       }
                       return null;

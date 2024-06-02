@@ -4,11 +4,11 @@ import 'package:resquecare/Models/panggilan_darurat_model.dart';
 import 'package:resquecare/View-Model/enum.dart';
 
 class PanggilanDaruratProvider extends ChangeNotifier {
-  List<PanggilanDaruratModel>? _getDataNomor;
+  Stream<List<PanggilanDaruratModel>>? _getDataNomor;
   ViewState _state = ViewState.none;
 
   ViewState get state => _state;
-  List<PanggilanDaruratModel> get getDataNomor => _getDataNomor!;
+  Stream<List<PanggilanDaruratModel>>? get getDataNomor => _getDataNomor;
 
   void setState(ViewState state) {
     _state = state;
@@ -22,12 +22,7 @@ class PanggilanDaruratProvider extends ChangeNotifier {
             (event) => event.docs.map((e) => PanggilanDaruratModel.fromJson(e.data())).toList(),
           );
       print(data);
-      data.forEach((element) {
-        print("here");
-        print(element);
-        _getDataNomor = element;
-        print("ootd");
-      });
+      _getDataNomor = data;
       print("abc");
       print("get data here $_getDataNomor");
 

@@ -93,8 +93,8 @@ class StatusPengaduanPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: AppColors.purpleButton),
                       ),
-                      child: Image.asset(
-                        "assets/images/odgj.png",
+                      child: Image.network(
+                        dataPengaduan.buktiFoto,
                         fit: BoxFit.contain,
                       )),
                 ],

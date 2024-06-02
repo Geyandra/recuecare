@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:resquecare/View-Model/enum.dart';
 
 class OtherProvider extends ChangeNotifier {

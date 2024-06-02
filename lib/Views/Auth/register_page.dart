@@ -5,7 +5,6 @@ import 'package:resquecare/Models/profile_model.dart';
 import 'package:resquecare/View-Model/auth_services.dart';
 import 'package:resquecare/View-Model/others_provider.dart';
 import 'package:resquecare/Views/Auth/login_page.dart';
-import 'package:resquecare/Views/home_page.dart';
 import 'package:resquecare/Widgets/button_purple.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
