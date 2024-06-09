@@ -81,17 +81,6 @@ class _ProfilePageState extends State<ProfilePage> {
   final fullNameController = TextEditingController();
   final phoneNumberController = TextEditingController();
 
-  // @override
-  // void initState() {
-  //   if (dataAccounts.profilePict != "") {
-  //     profileUrl = dataAccounts.profilePict;
-  //   }
-  //   usernameController.text = dataAccounts.username;
-  //   fullNameController.text = dataAccounts.fullname;
-  //   phoneNumberController.text = dataAccounts.phoneNumber;
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final updateProfile = Provider.of<AuthServicesProvider>(context, listen: false);
@@ -105,64 +94,6 @@ class _ProfilePageState extends State<ProfilePage> {
               Accounts data = snapshot.data![0];
               return Scaffold(
                 resizeToAvoidBottomInset: false, //agar tidak overflow ketika keyboard muncul
-                floatingActionButton: value.isEditProfile // tombol akan berubah sesuai dengan kondisi mengedit akun atau tidak
-                    ? ButtonPurple(
-                        buttonText: "Simpan",
-                        onPressed: () {
-                          if (listImage.isNotEmpty) {
-                            uploadImage(listImage[0]);
-                          }
-                          print("After Uploading image");
-                          final editableData = Accounts(
-                            id: data.id,
-                            fullname: fullNameController.text,
-                            username: usernameController.text,
-                            email: data.email,
-                            phoneNumber: phoneNumberController.text,
-                            role: data.role,
-                            profilePict: profileUrl,
-                          );
-                          print("=" * 15);
-                          print(profileUrl);
-                          updateProfile.editDataUser(editableData);
-                          context.read<OtherProvider>().editProfile();
-
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              Future.delayed(const Duration(seconds: 3), () {
-                                Navigator.pop(context);
-                              });
-                              return AlertDialog(
-                                content: SizedBox(
-                                  height: 192,
-                                  width: 252,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset("assets/icons/done.png"),
-                                      const SizedBox(
-                                        height: 20,
-                                      ),
-                                      const Text(
-                                        "Perubahan disimpan",
-                                        style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: AppColors.purpleAppbar),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      )
-                    : ButtonPurple(
-                        buttonText: "Logout",
-                        onPressed: () {
-                          context.read<AuthServicesProvider>().signOut(context);
-                        },
-                      ),
-                floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
                 body: CustomScrollView(
                   slivers: [
                     const SliverAppBar(
@@ -513,6 +444,73 @@ class _ProfilePageState extends State<ProfilePage> {
                                   filled: true,
                                   fillColor: Colors.white,
                                 ),
+                                const Gap(30),
+                                value.isEditProfile // tombol akan berubah sesuai dengan kondisi mengedit akun atau tidak
+                                    ? Container(
+                                        width: MediaQuery.of(context).size.width,
+                                        alignment: Alignment.center,
+                                        child: ButtonPurple(
+                                          buttonText: "Simpan",
+                                          onPressed: () {
+                                            if (listImage.isNotEmpty) {
+                                              uploadImage(listImage[0]);
+                                            }
+                                            print("After Uploading image");
+                                            final editableData = Accounts(
+                                              id: data.id,
+                                              fullname: fullNameController.text,
+                                              username: usernameController.text,
+                                              email: data.email,
+                                              phoneNumber: phoneNumberController.text,
+                                              role: data.role,
+                                              profilePict: profileUrl,
+                                            );
+                                            print("=" * 15);
+                                            print(profileUrl);
+                                            updateProfile.editDataUser(editableData);
+                                            context.read<OtherProvider>().editProfile();
+
+                                            showDialog(
+                                              context: context,
+                                              builder: (context) {
+                                                Future.delayed(const Duration(seconds: 3), () {
+                                                  Navigator.pop(context);
+                                                });
+                                                return AlertDialog(
+                                                  content: SizedBox(
+                                                    height: 192,
+                                                    width: 252,
+                                                    child: Column(
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+                                                        Image.asset("assets/icons/done.png"),
+                                                        const SizedBox(
+                                                          height: 20,
+                                                        ),
+                                                        const Text(
+                                                          "Perubahan disimpan",
+                                                          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: AppColors.purpleAppbar),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      )
+                                    : Container(
+                                        width: MediaQuery.of(context).size.width,
+                                        alignment: Alignment.center,
+                                        child: ButtonPurple(
+                                          buttonText: "Logout",
+                                          onPressed: () {
+                                            context.read<AuthServicesProvider>().signOut(context);
+                                          },
+                                        ),
+                                      ),
+                                const Gap(20)
                               ],
                             ),
                           )

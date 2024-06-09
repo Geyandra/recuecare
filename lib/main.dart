@@ -8,7 +8,6 @@ import 'package:resquecare/View-Model/others_provider.dart';
 import 'package:resquecare/View-Model/panggilan_darurat_provider.dart';
 import 'package:resquecare/View-Model/pengaduan_provider.dart';
 import 'package:resquecare/Views/Admin/admin_home_page.dart';
-import 'package:resquecare/Views/Auth/login_page.dart';
 import 'package:resquecare/Views/Auth/splash_screen.dart';
 import 'package:resquecare/Views/home_page.dart';
 import 'package:resquecare/Views/notification_page.dart';
@@ -74,7 +73,7 @@ class Navbar extends StatefulWidget {
 }
 
 class _Navbar extends State<Navbar> {
-  int currentPage = 0;
+  int currentPage = 1;
   @override
   Widget build(BuildContext context) {
   final screen = [
@@ -90,6 +89,8 @@ class _Navbar extends State<Navbar> {
         ),
         child: BottomNavigationBar(
           currentIndex: currentPage,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           backgroundColor: AppColors.purpleAppbar,
           selectedItemColor: const Color(0xff23A6F0),
@@ -157,6 +158,8 @@ class _AdminNavbar extends State<AdminNavbar> {
         ),
         child: BottomNavigationBar(
           currentIndex: currentPage,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           backgroundColor: AppColors.purpleAppbar,
           selectedItemColor: const Color(0xff23A6F0),

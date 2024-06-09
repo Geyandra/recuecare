@@ -30,8 +30,8 @@ class StatusPengaduanPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     width: double.infinity,
                     height: 46,
-                    color: statusPengaduan == "Accepted" ? const Color(0xff8DEC91) : const Color(0xffEC9E8D), //mengubah wanra sesuai dengan status pengaduan
-                    child: statusPengaduan == "Accepted" ? const Text("Laporan telah di Konfirmasi, ODGJ akan segera ditangani") : const Text("Laporan ditolak karena tidak valid"), //mengubah informais sesuai dengan status pengaduan
+                    color: statusPengaduan == "accepted" ? const Color(0xff8DEC91) : const Color(0xffEC9E8D), //mengubah wanra sesuai dengan status pengaduan
+                    child: statusPengaduan == "accepted" ? const Text("Laporan telah di Konfirmasi, ODGJ akan segera ditangani") : const Text("Laporan ditolak karena tidak valid"), //mengubah informais sesuai dengan status pengaduan
                   ),
             Padding(
               padding: const EdgeInsets.all(20),
