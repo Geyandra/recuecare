@@ -8,10 +8,10 @@ class StatusPengaduanPage extends StatelessWidget {
   final PengaduanModel dataPengaduan;
   const StatusPengaduanPage({super.key, required this.dataPengaduan});
 
- //status pengaduan
+  //status pengaduan
   @override
   Widget build(BuildContext context) {
-  final String statusPengaduan = dataPengaduan.status; 
+    final String statusPengaduan = dataPengaduan.status;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -23,14 +23,16 @@ class StatusPengaduanPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              width: double.infinity,
-              height: 46,
-              color: statusPengaduan == "Accepted" ? const Color(0xff8DEC91) : const Color(0xffEC9E8D), //mengubah wanra sesuai dengan status pengaduan
-              child: statusPengaduan == "Accepted" ? const Text("Laporan telah di Konfirmasi, ODGJ akan segera ditangani") : const Text("Laporan ditolak karena tidak valid"), //mengubah informais sesuai dengan status pengaduan
-            ),
+            statusPengaduan == "waiting"
+                ? Container()
+                : Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    width: double.infinity,
+                    height: 46,
+                    color: statusPengaduan == "Accepted" ? const Color(0xff8DEC91) : const Color(0xffEC9E8D), //mengubah wanra sesuai dengan status pengaduan
+                    child: statusPengaduan == "Accepted" ? const Text("Laporan telah di Konfirmasi, ODGJ akan segera ditangani") : const Text("Laporan ditolak karena tidak valid"), //mengubah informais sesuai dengan status pengaduan
+                  ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(

@@ -61,7 +61,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           child: Column(
                             children: [
                               ListTile(
-                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                                 leading: SizedBox(
                                   width: 50,
                                   child: CircleAvatar(
@@ -73,7 +73,8 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Panggilan Darurat",
+                                title: const Text(
+                                  "Fitur Panggilan Darurat",
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 trailing: IconButton(
@@ -91,7 +92,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
                                     TextSpan(
                                       text: "Masuk ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -108,7 +109,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
                                     TextSpan(
                                       text: "Panggilan Darurat",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -122,7 +123,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "3 Pilih ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "3 Pilih ", children: [
                                     TextSpan(
                                       text: "nomor telepon ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -139,7 +140,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "4 Kemudian klik ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "4 Kemudian klik ", children: [
                                     TextSpan(
                                       text: "icon WhatsApp ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -156,7 +157,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "5 Lalu ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "5 Lalu ", children: [
                                     TextSpan(
                                       text: "hubungi petugas ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -173,7 +174,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "6 Fitur ini digunakan pada situasi yang ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "6 Fitur ini digunakan pada situasi yang ", children: [
                                     TextSpan(
                                       text: "sangat darurat ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -185,7 +186,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           ),
                         )
                       : ListTile(
-                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                           leading: SizedBox(
                             width: 50,
                             child: CircleAvatar(
@@ -197,7 +198,8 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Panggilan Darurat",
+                          title: const Text(
+                            "Fitur Panggilan Darurat",
                             style: TextStyle(fontSize: 15),
                           ),
                           trailing: IconButton(
@@ -244,7 +246,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           child: Column(
                             children: [
                               ListTile(
-                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                                 leading: SizedBox(
                                   width: 50,
                                   child: CircleAvatar(
@@ -256,7 +258,8 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Pengaduan",
+                                title: const Text(
+                                  "Fitur Pengaduan",
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 trailing: IconButton(
@@ -274,7 +277,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
                                     TextSpan(
                                       text: "Masuk ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -291,7 +294,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
                                     TextSpan(
                                       text: "Pnegaduan",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -305,7 +308,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "3 Mengisi ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "3 Mengisi ", children: [
                                     TextSpan(
                                       text: "form pengaduan ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -319,7 +322,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "4 Harap mengisi ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "4 Harap mengisi ", children: [
                                     TextSpan(
                                       text: "seluruh form ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -336,7 +339,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "5 Kemudian setelah mengisi klik ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "5 Kemudian setelah mengisi klik ", children: [
                                     TextSpan(
                                       text: "Ajukan Pengaduan ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -350,7 +353,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "6 Lalu akan muncul pop up ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "6 Lalu akan muncul pop up ", children: [
                                     TextSpan(
                                       text: "Aduan berhasil ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -362,7 +365,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           ),
                         )
                       : ListTile(
-                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                           leading: SizedBox(
                             width: 50,
                             child: CircleAvatar(
@@ -374,7 +377,8 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Pengaduan",
+                          title: const Text(
+                            "Fitur Pengaduan",
                             style: TextStyle(fontSize: 15),
                           ),
                           trailing: IconButton(
@@ -421,7 +425,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           child: Column(
                             children: [
                               ListTile(
-                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                                 leading: SizedBox(
                                   width: 50,
                                   child: CircleAvatar(
@@ -433,7 +437,8 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Edukasi Penanganan ODGJ",
+                                title: const Text(
+                                  "Fitur Edukasi Penanganan ODGJ",
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 trailing: IconButton(
@@ -451,7 +456,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
                                     TextSpan(
                                       text: "Masuk ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -468,7 +473,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
                                     TextSpan(
                                       text: "Edukasi Penanganan ODGJ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -482,7 +487,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "3 Fitur ini digunakan untuk mengetahui tata ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "3 Fitur ini digunakan untuk mengetahui tata ", children: [
                                     TextSpan(
                                       text: "cara penanganan ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -497,7 +502,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           ),
                         )
                       : ListTile(
-                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                           leading: SizedBox(
                             width: 50,
                             child: CircleAvatar(
@@ -509,7 +514,8 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Edukasi Penanganan ODGJ",
+                          title: const Text(
+                            "Fitur Edukasi Penanganan ODGJ",
                             style: TextStyle(fontSize: 15),
                           ),
                           trailing: IconButton(
@@ -556,7 +562,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           child: Column(
                             children: [
                               ListTile(
-                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                                titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                                 leading: SizedBox(
                                   width: 50,
                                   child: CircleAvatar(
@@ -568,7 +574,8 @@ class _PanduanPageState extends State<PanduanPage> {
                                     ),
                                   ),
                                 ),
-                                title: const Text("Fitur Panduan Aplikasi",
+                                title: const Text(
+                                  "Fitur Panduan Aplikasi",
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 trailing: IconButton(
@@ -586,7 +593,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "1 ", children: [
                                     TextSpan(
                                       text: "Masuk ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -603,7 +610,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "2 Kemudian klik fitur ", children: [
                                     TextSpan(
                                       text: "Panduan Aplikasi",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -617,7 +624,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "3 Fitur ini digunakan untuk mengetahui  ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "3 Fitur ini digunakan untuk mengetahui  ", children: [
                                     TextSpan(
                                       text: "petunjuk penggunaan ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -634,7 +641,7 @@ class _PanduanPageState extends State<PanduanPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: RichText(
                                   overflow: TextOverflow.clip,
-                                  text: const TextSpan(style: TextStyle(fontSize: 12, color: Colors.black, wordSpacing: 2), text: "4 Untuk mengetahui penggunaan fitur maka klik ", children: [
+                                  text: const TextSpan(style: TextStyle(fontSize: 14, color: Colors.black, wordSpacing: 2), text: "4 Untuk mengetahui penggunaan fitur maka klik ", children: [
                                     TextSpan(
                                       text: "dropdown ",
                                       style: TextStyle(fontWeight: FontWeight.bold),
@@ -649,7 +656,7 @@ class _PanduanPageState extends State<PanduanPage> {
                           ),
                         )
                       : ListTile(
-                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.black),
+                          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black),
                           leading: SizedBox(
                             width: 50,
                             child: CircleAvatar(
@@ -661,7 +668,8 @@ class _PanduanPageState extends State<PanduanPage> {
                               ),
                             ),
                           ),
-                          title: const Text("Fitur Panduan Aplikasi",
+                          title: const Text(
+                            "Fitur Panduan Aplikasi",
                             style: TextStyle(fontSize: 15),
                           ),
                           trailing: IconButton(

@@ -16,6 +16,7 @@ import 'package:resquecare/Widgets/button_purple.dart';
 import 'package:resquecare/Widgets/custom_text_form_field.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
+import 'package:resquecare/main.dart';
 
 class PengaduanPage extends StatefulWidget {
   const PengaduanPage({super.key});
@@ -387,7 +388,7 @@ class _PengaduanPageState extends State<PengaduanPage> {
                             context: context,
                             builder: (context) {
                               Future.delayed(const Duration(seconds: 3), () {
-                                Navigator.push(context, createRoute(const HomePage()));
+                                Navigator.push(context, createRoute(const Navbar()));
                               });
                               return AlertDialog(
                                 content: SizedBox(

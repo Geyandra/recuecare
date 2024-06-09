@@ -17,47 +17,47 @@ class AdminHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 80,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          color: AppColors.purpleAppbar,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.home_filled),
-              color: Colors.white,
-              iconSize: 35,
-            ),
-            Consumer<AuthServicesProvider>(builder: (context, value, child) {
-              return IconButton(
-                onPressed: () {
-                  late Accounts data;
-                  final streamData = value.dataUser;
-                  for (var e in streamData) {
-                    data = e;
-                  }
-                  print("=" * 20);
-                  print(data);
+      // floatingActionButton: Container(
+      //   width: MediaQuery.of(context).size.width,
+      //   height: 80,
+      //   decoration: const BoxDecoration(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(20),
+      //       topRight: Radius.circular(20),
+      //     ),
+      //     color: AppColors.purpleAppbar,
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //     children: [
+      //       IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(Icons.home_filled),
+      //         color: Colors.white,
+      //         iconSize: 35,
+      //       ),
+      //       Consumer<AuthServicesProvider>(builder: (context, value, child) {
+      //         return IconButton(
+      //           onPressed: () {
+      //             late Accounts data;
+      //             final streamData = value.dataUser;
+      //             for (var e in streamData) {
+      //               data = e;
+      //             }
+      //             print("=" * 20);
+      //             print(data);
 
-                  Navigator.push(context, createRoute(ProfilePage(data: data)));
-                },
-                icon: const Icon(Icons.person),
-                color: Colors.white,
-                iconSize: 35,
-              );
-            }),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //             Navigator.push(context, createRoute(const ProfilePage()));
+      //           },
+      //           icon: const Icon(Icons.person),
+      //           color: Colors.white,
+      //           iconSize: 35,
+      //         );
+      //       }),
+      //     ],
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Stack(
         alignment: Alignment.center,
         children: [

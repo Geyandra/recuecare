@@ -8,31 +8,9 @@ import 'package:resquecare/Views/Admin/admin_home_page.dart';
 import 'package:resquecare/Views/Auth/login_page.dart';
 import 'package:resquecare/Views/home_page.dart';
 import 'package:resquecare/Widgets/transition.dart';
+import 'package:resquecare/main.dart';
 
-// const String collectionName = 'Profile';
 
-// class AuthProfileServices {
-//   final firestore = FirebaseFirestore.instance;
-//   late final Stream<List<Accounts>> _dataProfiles;
-//   late final CollectionReference _dataAccounts;
-
-//   AuthProfileServices() {
-//     _dataAccounts = firestore.collection(collectionName).withConverter<Accounts>(
-//           fromFirestore: (snapshots, _) => Accounts.fromJson(snapshots.data()!),
-//           toFirestore: (dataAccount, _) => dataAccount.toJson(),
-//         );
-//   }
-
-//   Stream<QuerySnapshot> getAccount() {
-//     return _dataAccounts.snapshots();
-//   }
-
-//   Stream<List<Accounts>> getProfile() {
-//     return _dataProfiles = firestore.collection(collectionName).where("email", isEqualTo: FirebaseAuth.instance.currentUser!.email!).snapshots().map(
-//           (snapshots) => snapshots.docs.map((doc) => Accounts.fromJson(doc.data())).toList(),
-//         );
-//   }
-// }
 
 class AuthServicesProvider extends ChangeNotifier {
   List<Accounts>? _dataUser;
@@ -104,9 +82,9 @@ class AuthServicesProvider extends ChangeNotifier {
         print("On Route");
         if (value.exists) {
           if (value.get("role") == "admin") {
-            Navigator.pushReplacement(context, createRoute(const AdminHomePage()));
+            Navigator.pushReplacement(context, createRoute(const AdminNavbar()));
           } else {
-            Navigator.pushReplacement(context, createRoute(const HomePage()));
+            Navigator.pushReplacement(context, createRoute(const Navbar()));
           }
         } else {
           print("Document not found");

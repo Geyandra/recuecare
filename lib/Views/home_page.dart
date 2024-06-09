@@ -20,55 +20,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Container(
-        width: MediaQuery.of(context).size.width, //mendapatkan ukuran dari android
-        height: 80,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          color: AppColors.purpleAppbar,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {
-                context.read<AdminPengaduanProvider>().getDataPengaduanUser();
-                Navigator.push(context, createRoute(const NotificationPage()));
-              },
-              icon: const Icon(Icons.notifications_rounded),
-              color: Colors.white,
-              iconSize: 35,
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.home_filled),
-              color: Colors.white,
-              iconSize: 35,
-            ),
-            Consumer<AuthServicesProvider>(builder: (context, value, child) {
-              return IconButton(
-                onPressed: () {
-                  late Accounts data;
-                  final dataList = value.dataUser;
+      // floatingActionButton: Container(
+      //   width: MediaQuery.of(context).size.width, //mendapatkan ukuran dari android
+      //   height: 80,
+      //   decoration: const BoxDecoration(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(20),
+      //       topRight: Radius.circular(20),
+      //     ),
+      //     color: AppColors.purpleAppbar,
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //     children: [
+      //       IconButton(
+      //         onPressed: () {
+      //           context.read<AdminPengaduanProvider>().getDataPengaduanUser();
+      //           Navigator.push(context, createRoute(const NotificationPage()));
+      //         },
+      //         icon: const Icon(Icons.notifications_rounded),
+      //         color: Colors.white,
+      //         iconSize: 35,
+      //       ),
+      //       IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(Icons.home_filled),
+      //         color: Colors.white,
+      //         iconSize: 35,
+      //       ),
+      //       Consumer<AuthServicesProvider>(builder: (context, value, child) {
+      //         return IconButton(
+      //           onPressed: () {
+      //             late Accounts data;
+      //             final dataList = value.dataUser;
 
-                  for (var element in dataList) {
-                    data = element;
-                  }
-                  print(data);
-                  Navigator.push(context, createRoute(ProfilePage(data: data)));
-                },
-                icon: const Icon(Icons.person),
-                color: Colors.white,
-                iconSize: 35,
-              );
-            }),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //             for (var element in dataList) {
+      //               data = element;
+      //             }
+      //             print(data);
+      //             Navigator.push(context, createRoute(const ProfilePage()));
+      //           },
+      //           icon: const Icon(Icons.person),
+      //           color: Colors.white,
+      //           iconSize: 35,
+      //         );
+      //       }),
+      //     ],
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Stack(
         //digunakan untuk menumpuk widget
         alignment: Alignment.center,

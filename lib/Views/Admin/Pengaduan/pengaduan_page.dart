@@ -22,6 +22,7 @@ class AdminPengaduanPage extends StatelessWidget {
             buttonText: "Tolak",
             onPressed: () {
               final data = PengaduanModel(
+                id: dataPengaduan.id,
                 deskripsiKejadian: dataPengaduan.deskripsiKejadian,
                 keteranganLokasi: dataPengaduan.keteranganLokasi,
                 lokasiKejadian: dataPengaduan.lokasiKejadian,
@@ -61,6 +62,7 @@ class AdminPengaduanPage extends StatelessWidget {
             buttonText: "Konfirmasi",
             onPressed: () {
               final data = PengaduanModel(
+                id: dataPengaduan.id,
                 deskripsiKejadian: dataPengaduan.deskripsiKejadian,
                 keteranganLokasi: dataPengaduan.keteranganLokasi,
                 lokasiKejadian: dataPengaduan.lokasiKejadian,
