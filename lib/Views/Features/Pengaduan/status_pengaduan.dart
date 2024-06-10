@@ -24,7 +24,14 @@ class StatusPengaduanPage extends StatelessWidget {
         child: Column(
           children: [
             statusPengaduan == "waiting"
-                ? Container()
+                ? Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    width: double.infinity,
+                    height: 46,
+                    color: const Color(0xffFFD43C),
+                    child: const Text("Laporan sedang diajukan"), 
+                  )
                 : Container(
                     alignment: Alignment.center,
                     padding: const EdgeInsets.symmetric(horizontal: 20),

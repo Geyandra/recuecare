@@ -90,10 +90,7 @@ class NotificationPage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  trailing: Image.asset(
-                                    "assets/images/odgj.png",
-                                    width: 50,
-                                  ),
+                                  trailing: Image.network(getDataPengaduan[index].buktiFoto, width: 50,)
                                 ),
                               ),
                             ),

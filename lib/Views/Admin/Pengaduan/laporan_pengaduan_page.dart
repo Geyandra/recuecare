@@ -5,6 +5,7 @@ import 'package:resquecare/Models/pengaduan_model.dart';
 import 'package:resquecare/View-Model/admin_pengaduan_provider.dart';
 import 'package:resquecare/View-Model/enum.dart';
 import 'package:resquecare/Views/Admin/Pengaduan/pengaduan_page.dart';
+import 'package:resquecare/Views/Features/Pengaduan/status_pengaduan.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
 
@@ -41,11 +42,11 @@ class LapporanPengaduanPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                createRoute(AdminPengaduanPage(
-                                  dataPengaduan: getDataPengaduan[index],
-                                )));
+                            if (getDataPengaduan[index].status == "waiting") {
+                              Navigator.push(context, createRoute(AdminPengaduanPage(dataPengaduan: getDataPengaduan[index])));
+                            } else {
+                              Navigator.push(context, createRoute(StatusPengaduanPage(dataPengaduan: getDataPengaduan[index])));
+                            }
                           },
                           child: Card(
                             child: Container(

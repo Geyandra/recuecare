@@ -114,9 +114,9 @@ class AdminPengaduanPage extends StatelessWidget {
             Container(
               height: 180,
               width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/odgj.png"),
+                  image: NetworkImage(dataPengaduan.buktiFoto),
                   fit: BoxFit.contain,
                 ),
               ),
