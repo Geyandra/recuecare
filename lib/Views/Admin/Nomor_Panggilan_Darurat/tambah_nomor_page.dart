@@ -8,6 +8,7 @@ import 'package:resquecare/Widgets/button_purple.dart';
 import 'package:resquecare/Widgets/custom_text_form_field.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
+import 'package:resquecare/main.dart';
 
 class TambahNomorPage extends StatelessWidget {
   const TambahNomorPage({super.key});
@@ -26,7 +27,7 @@ class TambahNomorPage extends StatelessWidget {
             phoneNumber: phoneController.text,
           );
           context.read<PanggilanDaruratProvider>().createCallNumber(data);
-          Navigator.push(context, createRoute(const AdminHomePage()));
+          Navigator.push(context, createRoute(const AdminNavbar()));
           showDialog(
             context: context,
             builder: (context) {

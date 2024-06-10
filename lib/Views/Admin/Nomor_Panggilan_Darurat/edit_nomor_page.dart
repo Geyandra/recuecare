@@ -9,6 +9,7 @@ import 'package:resquecare/Widgets/button_white.dart';
 import 'package:resquecare/Widgets/custom_text_form_field.dart';
 import 'package:resquecare/Widgets/transition.dart';
 import 'package:resquecare/colors.dart';
+import 'package:resquecare/main.dart';
 
 class EditNomorPage extends StatelessWidget {
   final PanggilanDaruratModel dataPanggilan;
@@ -29,7 +30,7 @@ class EditNomorPage extends StatelessWidget {
             buttonText: "Hapus",
             onPressed: () {
               context.read<PanggilanDaruratProvider>().deleteCallNumber(dataPanggilan.id);
-              Navigator.push(context, createRoute(const AdminHomePage()));
+              Navigator.push(context, createRoute(const AdminNavbar()));
 
               showDialog(
                 context: context,
@@ -67,7 +68,7 @@ class EditNomorPage extends StatelessWidget {
                 phoneNumber: phoneController.text,
               );
               context.read<PanggilanDaruratProvider>().editCallNumber(data);
-              Navigator.push(context, createRoute(const AdminHomePage()));
+              Navigator.push(context, createRoute(const AdminNavbar()));
               showDialog(
                 context: context,
                 builder: (context) {

@@ -36,6 +36,7 @@ class AdminPengaduanPage extends StatelessWidget {
                 builder: (context) {
                   Future.delayed(const Duration(seconds: 3), () {
                     Navigator.pop(context);
+                    Navigator.pop(context);
                   });
                   return AlertDialog(
                     content: SizedBox(
@@ -75,6 +76,7 @@ class AdminPengaduanPage extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   Future.delayed(const Duration(seconds: 3), () {
+                    Navigator.pop(context);
                     Navigator.pop(context);
                   });
                   return AlertDialog(
