@@ -1,10 +1,30 @@
 {
   "project_info": {
     "project_number": "527314231266",
+    "firebase_url": "https://rescuecare-default-rtdb.firebaseio.com",
     "project_id": "rescuecare",
     "storage_bucket": "rescuecare.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527314231266:android:d51f09fb8f7b596858a3bb",
+        "android_client_info": {
+          "package_name": "com.arexample.ar_geometric"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY2tZ6FWWRhcgoZMKSPsMDRu69cj41tws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:527314231266:android:7fe92204c5f7300458a3bb",

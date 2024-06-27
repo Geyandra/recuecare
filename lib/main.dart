@@ -13,17 +13,13 @@ import 'package:resquecare/Views/home_page.dart';
 import 'package:resquecare/Views/notification_page.dart';
 import 'package:resquecare/Views/profile_page.dart';
 import 'package:resquecare/colors.dart';
+import 'package:resquecare/firebase_options.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: const FirebaseOptions(
-    apiKey: "AIzaSyDY2tZ6FWWRhcgoZMKSPsMDRu69cj41tws",
-    appId: "1:527314231266:android:7fe92204c5f7300458a3bb",
-    messagingSenderId: "527314231266",
-    projectId: "rescuecare",
-    storageBucket: "rescuecare.appspot.com",
-  ));
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [
@@ -76,11 +72,11 @@ class _Navbar extends State<Navbar> {
   int currentPage = 1;
   @override
   Widget build(BuildContext context) {
-  final screen = [
-    const NotificationPage(),
-    const HomePage(),
-    const ProfilePage(),
-  ];
+    final screen = [
+      const NotificationPage(),
+      const HomePage(),
+      const ProfilePage(),
+    ];
     return Scaffold(
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
@@ -107,21 +103,25 @@ class _Navbar extends State<Navbar> {
             });
           },
           items: const [
-            
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_rounded,
+              icon: Icon(
+                Icons.notifications_rounded,
                 color: Colors.white,
               ),
               label: "Notification",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled,
+              icon: Icon(
+                Icons.home_filled,
                 color: Colors.white,
               ),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.white,),
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
               label: "Profile",
             ),
           ],
@@ -131,7 +131,6 @@ class _Navbar extends State<Navbar> {
     );
   }
 }
-
 
 class AdminNavbar extends StatefulWidget {
   const AdminNavbar({
@@ -166,7 +165,6 @@ class _AdminNavbar extends State<AdminNavbar> {
           unselectedItemColor: const Color(0xff484C52),
           onTap: (value) {
             setState(() {
-              
               if (value == 1) {
                 context.read<AuthServicesProvider>().getDataUserFromLogin();
               }
